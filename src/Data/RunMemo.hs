@@ -1,5 +1,6 @@
 module Data.RunMemo (
     runMemo
+  , noMemo
   , Memoizable
   , Memoizer
   ) where
@@ -12,3 +13,5 @@ runMemo memo f = fix (f . memo)
   where fix h = let x = h x in x
         (g . h) x = g (h x)
 
+noMemo :: Memoizer a b
+noMemo f = f
