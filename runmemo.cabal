@@ -1,8 +1,12 @@
 name:                runmemo
-version:             0.1.0.0
+version:             1.0.0.0
 synopsis:            A simple memoization helper library
 
--- description:         
+description:
+  A simple memoization helper library.
+  .
+  Detailed description coming soon.
+  If not, email me.
 
 homepage:            https://github.com/DanBurton/runmemo
 license:             BSD3
@@ -20,9 +24,18 @@ library
   exposed-modules:   Data.RunMemo
   extensions:        NoImplicitPrelude
   ghc-options:       -Wall
-  -- other-modules:       
-  -- build-depends:       
+
+test-suite test-race
+  type:            exitcode-stdio-1.0
+  hs-source-dirs:  test
+  main-is:         test-race.hs
+  build-depends:   data-memocombinators == 0.4.*, base == 4.5.*
 
 source-repository head
   type:     git
   location: git@github.com:DanBurton/runmemo.git
+
+source-repository this
+  type:     git
+  location: git@github.com:DanBurton/runmemo.git
+  tag:      runmemo-1.0.0.0
